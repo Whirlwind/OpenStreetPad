@@ -11,7 +11,7 @@
 @interface OSPWay : OSPAPIObject
 
 @property (readwrite,strong,nonatomic) NSArray *nodes;
-@property (readonly) NSArray *nodeObjects;
+@property (weak, readonly) NSArray *nodeObjects;
 
 - (id)wayByCopyingTagsAndNodes;
 

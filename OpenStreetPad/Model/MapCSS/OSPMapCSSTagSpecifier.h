@@ -15,7 +15,7 @@
 
 @interface OSPMapCSSTagSpecifier : OSPMapCSSSpecifier
 
-@property (readwrite, retain) OSPMapCSSTagSpec *tag;
+@property (readwrite, strong) OSPMapCSSTagSpec *tag;
 
 - (OSPMapCSSSpecifier *)specifierWithAPIObject:(OSPAPIObject *)object;
 

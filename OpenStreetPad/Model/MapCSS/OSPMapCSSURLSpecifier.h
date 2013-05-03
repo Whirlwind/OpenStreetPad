@@ -12,7 +12,7 @@
 
 @interface OSPMapCSSURLSpecifier : OSPMapCSSSpecifier
 
-@property (readwrite, retain) OSPMapCSSUrl *url;
+@property (readwrite, strong) OSPMapCSSUrl *url;
 
 - (id)initWithURL:(OSPMapCSSUrl *)url;
 

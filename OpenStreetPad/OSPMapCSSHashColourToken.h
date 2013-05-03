@@ -17,7 +17,7 @@
 @interface OSPMapCSSHashColourToken : CPToken
 
 #if TARGET_OS_IPHONE
-@property (readwrite,retain) UIColor *colour;
+@property (readwrite,strong) UIColor *colour;
 #endif
 
 + (id)tokenWithRed:(uint8_t)r green:(uint8_t)g blue:(uint8_t)b;

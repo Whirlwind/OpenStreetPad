@@ -11,7 +11,7 @@
 @interface OSPMapCSSColourSpecifier : OSPMapCSSSpecifier
 
 #if TARGET_OS_IPHONE
-@property (readwrite, retain) UIColor *colour;
+@property (readwrite, strong) UIColor *colour;
 
 - (id)initWithColour:(UIColor *)colour;
 #endif

@@ -12,6 +12,6 @@
 
 @interface OSPMapCSSEvalSpecifier : OSPMapCSSSpecifier
 
-@property (readwrite, retain) OSPMapCSSEval *eval;
+@property (readwrite, strong) OSPMapCSSEval *eval;
 
 @end

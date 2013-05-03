@@ -22,7 +22,7 @@
 @property (readwrite, copy  ) NSString *role;
 @property (readwrite, weak  ) OSPRelation *relation;
 
-@property (readonly) OSPAPIObject *referencedObject;
+@property (weak, readonly) OSPAPIObject *referencedObject;
 
 @property (readonly) OSPCoordinateRect bounds;
 

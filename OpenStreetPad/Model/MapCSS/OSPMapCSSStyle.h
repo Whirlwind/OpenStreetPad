@@ -16,9 +16,9 @@
 @interface OSPMapCSSStyle : NSObject <CPParseResult>
 
 @property (readwrite, assign) BOOL containsRule;
-@property (readwrite, retain) OSPMapCSSRule *rule;
+@property (readwrite, strong) OSPMapCSSRule *rule;
 @property (readwrite, assign, getter = isExit) BOOL exit;
 @property (readwrite, copy) NSString *key;
-@property (readwrite, retain) OSPMapCSSSpecifierList *specifiers;
+@property (readwrite, strong) OSPMapCSSSpecifierList *specifiers;
 
 @end
