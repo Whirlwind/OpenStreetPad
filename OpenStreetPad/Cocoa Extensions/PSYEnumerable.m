@@ -43,12 +43,12 @@ void PSYMultiDictionaryEnumerator(NSArray *enumaratedDicts, BOOL finishAll, void
     
     __unsafe_unretained id *objects = (__unsafe_unretained id *)calloc(count, sizeof(*objects));
     
-    __unsafe_unretained NSDictionary **enumerables = (__unsafe_unretained id *)calloc(count, sizeof(id));
+    __unsafe_unretained NSDictionary **enumerables = (__unsafe_unretained id *)calloc(count, sizeof(NSDictionary *));
     [enumaratedDicts getObjects:enumerables range:NSMakeRange(0, count)];
     
     NSMutableSet *alreadyDone = finishAll ? [NSMutableSet setWithCapacity:[enumerables[0] count]] : nil;
     
-    PSYMultiEnumState currentState = { 0 };
+    PSYMultiEnumState currentState;
     
     BOOL stop = NO, isFirstLoop __unused = YES;
     
@@ -104,7 +104,7 @@ void PSYMultiEnumerator(NSArray *enumerated, BOOL finishAll, void(^block)(__unsa
     PSYMultiEnumState      *states  = calloc(count, sizeof(*states));
     __unsafe_unretained id *objects = (__unsafe_unretained id *)calloc(count, sizeof(*objects));
     
-    __unsafe_unretained id<NSObject, NSFastEnumeration> *enumerables = (__unsafe_unretained id *)calloc(count, sizeof(id));
+    __unsafe_unretained id<NSObject, NSFastEnumeration> *enumerables = (__unsafe_unretained id *)calloc(count, sizeof(id<NSObject, NSFastEnumeration>));
     [enumerated getObjects:enumerables range:NSMakeRange(0, count)];
     
     BOOL stop = NO, isFirstLoop = YES;

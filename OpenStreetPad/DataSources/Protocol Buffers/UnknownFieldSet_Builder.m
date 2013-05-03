@@ -52,7 +52,7 @@
 
 
 + (PBUnknownFieldSet_Builder*) newBuilder:(PBUnknownFieldSet*) unknownFields {
-  PBUnknownFieldSet_Builder* builder = [[[PBUnknownFieldSet_Builder alloc] init] autorelease];
+  PBUnknownFieldSet_Builder* builder = [[PBUnknownFieldSet_Builder alloc] init];
   [builder mergeUnknownFields:unknownFields];
   return builder;
 }

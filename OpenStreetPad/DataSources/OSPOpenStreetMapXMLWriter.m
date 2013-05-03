@@ -74,19 +74,15 @@
     [[self writer] writeStartElement:@"osm" withAttributes:@{@"version" : @"0.6", @"generator" : @"OpenStreetPad"}];
     if ([nodes count] > 0)
     {
-        OSPCoordinateRect b;
-        for (OSPNode *node in nodes)
-        {
-            CLLocationCoordinate2D l = [node location];
-            b = OSPCoordinateRectMake(l.longitude, l.latitude, 0.0, 0.0);
-            break;
-        }
+        CLLocationCoordinate2D l = [(OSPNode *)nodes[0] location];
+        OSPCoordinateRect b = OSPCoordinateRectMake(l.longitude, l.latitude, 0.0, 0.0);
+
         for (OSPNode *node in nodes)
         {
             CLLocationCoordinate2D l = [node location];
             b = OSPCoordinateRectUnion(b, OSPCoordinateRectMake(l.longitude, l.latitude, 0.0, 0.0));
         }
-        
+
         [[self writer] writeElement:@"bounds"
                      withAttributes:@{@"minlat" : [NSString stringWithFormat:@"%f", b.origin.y],
                                       @"minlon" : [NSString stringWithFormat:@"%f", b.origin.x],

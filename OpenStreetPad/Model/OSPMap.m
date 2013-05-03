@@ -107,7 +107,7 @@ Boolean APIObjectEqual (const void *value1, const void *value2)
     CFSetRef c = [self contents];
     if (CFSetGetCount(c) > 0)
     {
-        OSPCoordinateRect b;
+        OSPCoordinateRect b = OSPCoordinateRectMake(0, 0, 0, 0);
         for (OSPAPIObject *obj in (__bridge NSSet *)c)
         {
             if ([obj memberType] == OSPMemberTypeNode)
